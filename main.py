@@ -24,8 +24,22 @@ class Person:
     print(self.email)
     print(self.isMale)
 
-a = input('Скільки потрібно робітників для компанії?')
-a = int(a)
+
+
+pracivnyky = []
+
+try:
+  a = input('Скільки потрібно робітників для компанії?')
+  a = int(a)
+except:
+  print('Не схоже на цифру')
+  a = input('Скільки потрібно робітників для компанії?')
+  a = int(a)
+
+
+
+
+
 
 m = input('Тільки чоловіки?')
 
@@ -35,7 +49,6 @@ if m == "-":
   gen = "female"
 
 
-pracivnyky = []
 
 while a != 0:
   p = Person('fr', gen)
