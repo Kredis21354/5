@@ -1,6 +1,6 @@
 import requests
 from colorama import Fore
-
+import logging
 class Person:
   def __init__ (self, nat, gen):
     r = requests.get("https://randomuser.me/api/?nat=" + nat + '&gender=' + gen)
@@ -10,6 +10,7 @@ class Person:
     self.age = res["results"][0]["dob"]["age"]
     self.phone = res["results"][0]["phone"]
     self.email = res["results"][0]["email"]
+    self.nation = res["results"][0]["nation"]
     self.isMale = res["results"][0]["gender"] == "male"
 
   def print_person(self):
@@ -22,6 +23,7 @@ class Person:
     print(self.age)
     print(self.phone)
     print(self.email)
+    print(self.nation)
     print(self.isMale)
 
 
@@ -32,7 +34,7 @@ try:
   a = input('Скільки потрібно робітників для компанії?')
   a = int(a)
 except:
-  print('Не схоже на цифру')
+  logging.warning
   a = input('Скільки потрібно робітників для компанії?')
   a = int(a)
 
@@ -51,7 +53,8 @@ if m == "-":
 
 
 while a != 0:
-  p = Person('fr', gen)
+  n = input("Введіть національність")
+  p = Person(n, gen)
   pracivnyky.append(p)
   a -= 1
 
