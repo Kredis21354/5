@@ -12,29 +12,74 @@ class Person:
     self.email = res["results"][0]["email"]
     self.isMale = res["results"][0]["gender"] == "male"
 
-  def print(self):
+  def print_person(self):
     if self.isMale:
       print(Fore.CYAN)
     else:
-      print(Fore.MAGNETA)
+      print(Fore.MAGENTA)
     print(self.name)
     print(self.surename)
     print(self.age)
     print(self.phone)
     print(self.email)
     print(self.isMale)
-  
-random_person = Person()
-random_person.print
 
-if random_person.isMale:
-  print(Fore.CYAN)
-else:
-  print(Fore.MAGENTA)
-print(random_person.name)
-print(random_person.surename)
-print(random_person.age)
-print(random_person.phone)
-print(random_person.email)
-print(random_person.isMale)
+a = input('Скільки потрібно робітників для компанії?')
+a = int(a)
 
+pracivnyky = []
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+#random_person = Person('dk')
+#random_person.print_person()
+
+#try:
+  #person2 = Person()
+  #person2.print_person()
+#except:
+  #print('Не можу створити персону')
+
+
+
+
+#if random_person.isMale:
+  #print(Fore.CYAN)
+#else:
+  #print(Fore.MAGENTA)
+#print(random_person.name)
+#print(random_person.surename)
+#print(random_person.age)
+#print(random_person.phone)
+#print(random_person.email)
+#print(random_person.isMale)
