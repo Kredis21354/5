@@ -3,7 +3,7 @@ from colorama import Fore
 
 class Person:
   def __init__ (self, nat, gen):
-    r = requests.get("https://randomuser.me/api/?nat=" + nat + '&gender=')
+    r = requests.get("https://randomuser.me/api/?nat=" + nat + '&gender=' + gen)
     res = r.json()
     self.name = res["results"][0]["name"]["first"]
     self.surename = res["results"][0]["name"]["last"]
@@ -27,12 +27,18 @@ class Person:
 a = input('Скільки потрібно робітників для компанії?')
 a = int(a)
 
-male = input('Тільки чоловіки?')
+m = input('Тільки чоловіки?')
+
+gen = "male"
+
+if m == "-":
+  gen = "female"
+
 
 pracivnyky = []
 
 while a != 0:
-  p = Person('fr')
+  p = Person('fr', gen)
   pracivnyky.append(p)
   a -= 1
 
